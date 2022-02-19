@@ -1,0 +1,36 @@
+{
+  "name": "clean-code-review-pluggin",
+  "version": "1.0.0",
+  "description": "Provides easy to use contextual menus to paste Markdown ready comments regarding clean code approaches to observe",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chrome": "0.0.178",
+    "copy-webpack-plugin": "^10.2.4",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.5",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "scripts": {
+    "build": "webpack --config webpack/webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crazycodr/chrome-ext-clean-code-reviewer.git"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "gitlab",
+    "review",
+    "clean",
+    "code"
+  ],
+  "author": "Mathieu Dumoulin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crazycodr/chrome-ext-clean-code-reviewer/issues"
+  },
+  "homepage": "https://github.com/crazycodr/chrome-ext-clean-code-reviewer#readme"
+}
