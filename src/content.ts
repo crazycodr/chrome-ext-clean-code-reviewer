@@ -1,4 +1,4 @@
-import {CodeSmellStructure} from "./codeSmellStructure";
+import {buildCodeSmellText} from "./buildCodeSmellText";
 
 chrome.runtime.onMessage.addListener(function(msg) {
     if (msg.action === 'inject-clean-code-smell') {
@@ -24,13 +24,3 @@ chrome.runtime.onMessage.addListener(function(msg) {
     }
 });
 
-function buildCodeSmellText(codeSmell: CodeSmellStructure)
-{
-    let text = "";
-    text += "> **" + codeSmell.code + " - " + codeSmell.name + "** (" + codeSmell.category + ")\n";
-    text += "> \n";
-    text += "> " + codeSmell.text + "\n";
-    text += "> \n";
-    text += "> *(See page " + codeSmell.page + " for more info)*";
-    return text;
-}
