@@ -2,8 +2,8 @@ import { getCodeSmells } from './data/codeSmells'
 import { createMainMenu } from './menuItems/createMainMenu'
 import { generateCategoriesFromCodeSmells } from './generators/generateCategoriesFromCodeSmells'
 import NestedCategoryBasedSubMenuItemGenerator from './generators/generateSubMenuItemsFromCategories'
-import { generateCodeSmellMenuItemsFromCodeSmells } from './generators/generateCodeSmellMenuItemsFromCodeSmells'
 import { MenuItemIdRepository } from './menuItems/menuItemRepository'
+import { generateCodeSmellMenuItemsFromCodeSmells } from './generators/generateCodeSmellMenuItemsFromCodeSmells'
 
 const mainMenu: number = createMainMenu()
 
