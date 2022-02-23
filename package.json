@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/crazycodr/chrome-ext-clean-code-reviewer.git"
+    "url": "git+https://github.com/crazycodr/code-commenter.git"
   },
   "keywords": [
     "chrome",
@@ -41,7 +41,11 @@
   "author": "Mathieu Dumoulin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/crazycodr/chrome-ext-clean-code-reviewer/issues"
+    "url": "https://github.com/crazycodr/code-commenter/issues"
   },
-  "homepage": "https://github.com/crazycodr/chrome-ext-clean-code-reviewer#readme"
+  "homepage": "https://github.com/crazycodr/code-commenter#readme",
+  "dependencies": {
+    "@types/lodash": "^4.14.178",
+    "lodash": "^4.17.21"
+  }
 }

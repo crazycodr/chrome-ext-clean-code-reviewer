@@ -1,12 +1,17 @@
 import { CodeSmellStructure } from '../models/codeSmellStructure'
 import { createCodeSmellMenuItem } from '../menuItems/createCodeSmellMenuItem'
+import { MenuItemIdRepository } from '../menuItems/menuItemRepository'
+import { last, split } from 'lodash'
 
-export function generateCodeSmellMenuItemsFromCodeSmells (subMenuItems: Map<string, number>, codeSmells: CodeSmellStructure[]) {
+export function generateCodeSmellMenuItemsFromCodeSmells (menuItemIdRepository: MenuItemIdRepository, codeSmells: CodeSmellStructure[]) {
   codeSmells.forEach(codeSmell => {
-    if (!subMenuItems.has(codeSmell.category)) {
-      return
+    const nestedParts: string[] = split(codeSmell.category, '/')
+    const lastPart: string = <string>last(nestedParts)
+    if (!menuItemIdRepository.has(lastPart)) {
+      console.log('Error with code smell, category path not found in menuItemIdRepository', {
+        codeSmell
+      })
     }
-    // @ts-ignore
-    createCodeSmellMenuItem(subMenuItems.get(codeSmell.category), codeSmell)
+    createCodeSmellMenuItem(menuItemIdRepository.get(lastPart), codeSmell)
   })
 }

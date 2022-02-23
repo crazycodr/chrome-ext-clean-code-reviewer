@@ -1,13 +1,16 @@
 import { getCodeSmells } from './data/codeSmells'
 import { createMainMenu } from './menuItems/createMainMenu'
 import { generateCategoriesFromCodeSmells } from './generators/generateCategoriesFromCodeSmells'
-import { generateSubMenuItemsFromCategories } from './generators/generateSubMenuItemsFromCategories'
+import NestedCategoryBasedSubMenuItemGenerator from './generators/generateSubMenuItemsFromCategories'
+import { MenuItemIdRepository } from './menuItems/menuItemRepository'
 import { generateCodeSmellMenuItemsFromCodeSmells } from './generators/generateCodeSmellMenuItemsFromCodeSmells'
 
 const mainMenu: number = createMainMenu()
 
 const categories: string[] = generateCategoriesFromCodeSmells(getCodeSmells())
 
-const subMenuItems: Map<string, number> = generateSubMenuItemsFromCategories(mainMenu, categories)
+const menuItemIdRepository: MenuItemIdRepository = new MenuItemIdRepository()
+const subMenuItemGenerator = new NestedCategoryBasedSubMenuItemGenerator(menuItemIdRepository)
+subMenuItemGenerator.generateSubMenuItemsFromCategories(mainMenu, categories)
 
-generateCodeSmellMenuItemsFromCodeSmells(subMenuItems, getCodeSmells())
+generateCodeSmellMenuItemsFromCodeSmells(menuItemIdRepository, getCodeSmells())
