@@ -1,8 +1,8 @@
 {
-  "name": "Clean code",
+  "name": "Code commenter",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "Adds a context menu to easily paste content relative to the excelent Clean Code book by Robert Martin.",
+  "description": "Adds a context menu to easily paste repetitive code review comments. Comes with default comments from different sources such a SOLID practices, STUPID practices, Clean Code by Martin Fowler, etc.",
   "permissions": [
     "contextMenus",
     "activeTab",

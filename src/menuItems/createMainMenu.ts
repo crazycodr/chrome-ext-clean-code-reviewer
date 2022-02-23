@@ -1,6 +1,6 @@
 export function createMainMenu (): number {
   return <number>chrome.contextMenus.create({
-    title: 'Clean Code',
+    title: 'Code commenter',
     contexts: ['editable']
   })
 }
