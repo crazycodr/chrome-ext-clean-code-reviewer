@@ -1,12 +1,9 @@
 import { CodeSmellStructure } from '../models/codeSmellStructure'
 import { createCodeSmellMenuItem } from '../menuItems/createCodeSmellMenuItem'
+import { MenuItemIdRepository } from '../menuItems/menuItemRepository'
 
-export function generateCodeSmellMenuItemsFromCodeSmells (subMenuItems: Map<string, number>, codeSmells: CodeSmellStructure[]) {
+export function generateCodeSmellMenuItemsFromCodeSmells (menuItemIdRepository: MenuItemIdRepository, codeSmells: CodeSmellStructure[]) {
   codeSmells.forEach(codeSmell => {
-    if (!subMenuItems.has(codeSmell.category)) {
-      return
-    }
-    // @ts-ignore
-    createCodeSmellMenuItem(subMenuItems.get(codeSmell.category), codeSmell)
+    createCodeSmellMenuItem(menuItemIdRepository.get(codeSmell.category), codeSmell)
   })
 }

@@ -1,15 +1,20 @@
 import { createSubMenuItem } from '../menuItems/createSubMenuItem'
 import { split } from 'lodash'
+import { MenuItemIdRepository } from '../menuItems/menuItemRepository'
 
 export default class NestedCategoryBasedSubMenuItemGenerator {
-  private subMenuItems: Map<string, number> = new Map<string, number>();
+  private menuItemIdRepository: MenuItemIdRepository;
 
-  private createMenuItemIfNeeded (nestedPart: string, parentId: number): number {
-    if (!this.subMenuItems.has(nestedPart)) {
+  constructor (menuItemIdRepository: MenuItemIdRepository) {
+    this.menuItemIdRepository = menuItemIdRepository
+  }
+
+  private createNestedPartIfNeeded (nestedPart: string, parentId: number): number {
+    if (!this.menuItemIdRepository.has(nestedPart)) {
       parentId = createSubMenuItem(parentId, nestedPart)
-      this.subMenuItems.set(nestedPart, parentId)
+      this.menuItemIdRepository.create(nestedPart, parentId)
     } else {
-      parentId = <number> this.subMenuItems.get(nestedPart)
+      parentId = <number> this.menuItemIdRepository.get(nestedPart)
     }
     return parentId
   }
@@ -18,7 +23,7 @@ export default class NestedCategoryBasedSubMenuItemGenerator {
     const nestedParts: string[] = split(category, '/')
     let parentId: number = mainMenu
     for (const nestedPart of nestedParts) {
-      parentId = this.createMenuItemIfNeeded(nestedPart, parentId)
+      parentId = this.createNestedPartIfNeeded(nestedPart, parentId)
     }
   }
 
@@ -26,6 +31,5 @@ export default class NestedCategoryBasedSubMenuItemGenerator {
     for (const category of categories) {
       this.splitCategoryIntoPartsAndCreateIfNeeded(category, mainMenu)
     }
-    return this.subMenuItems
   }
 }
