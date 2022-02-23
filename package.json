@@ -43,5 +43,9 @@
   "bugs": {
     "url": "https://github.com/crazycodr/chrome-ext-clean-code-reviewer/issues"
   },
-  "homepage": "https://github.com/crazycodr/chrome-ext-clean-code-reviewer#readme"
+  "homepage": "https://github.com/crazycodr/chrome-ext-clean-code-reviewer#readme",
+  "dependencies": {
+    "@types/lodash": "^4.14.178",
+    "lodash": "^4.17.21"
+  }
 }
