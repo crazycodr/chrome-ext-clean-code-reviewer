@@ -4,6 +4,7 @@
   "description": "Provides easy to use contextual menus to paste Markdown ready comments regarding clean code approaches to observe",
   "devDependencies": {
     "@types/chrome": "0.0.178",
+    "@types/jest": "^27.4.0",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",
     "copy-webpack-plugin": "^10.2.4",
@@ -13,6 +14,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "eslint-webpack-plugin": "^3.1.1",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.3",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.5",
     "webpack": "^5.69.1",
@@ -20,7 +23,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack/webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest"
   },
   "repository": {
     "type": "git",

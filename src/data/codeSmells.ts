@@ -1,5 +1,9 @@
 import { CodeSmellStructure } from '../models/codeSmellStructure'
 
+export function getCodeSmells (): CodeSmellStructure[] {
+  return codeSmells
+}
+
 export const codeSmells = [
   new CodeSmellStructure(
     'C1',
