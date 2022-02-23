@@ -1,4 +1,4 @@
-import { buildCodeSmellText } from './buildCodeSmellText'
+import { buildCodeSmellText } from './renderers/buildCodeSmellText'
 
 chrome.runtime.onMessage.addListener(function (msg) {
   if (msg.action === 'inject-clean-code-smell') {
