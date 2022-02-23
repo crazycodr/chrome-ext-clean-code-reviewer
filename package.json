@@ -23,7 +23,8 @@
   },
   "scripts": {
     "build": "webpack --config webpack/webpack.config.js",
-    "test": "npx jest"
+    "test": "npx jest",
+    "lint": "npx eslint --fix"
   },
   "repository": {
     "type": "git",
