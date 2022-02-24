@@ -22,8 +22,8 @@
     "webpack-cli": "^4.9.2"
   },
   "scripts": {
-    "build": "webpack --config webpack/webpack.config.js",
-    "test": "npx jest",
+    "build": "webpack --config webpack/webpack.config.js && cd dist && zip package.zip *",
+    "test": "npx jest --collect-coverage",
     "lint": "npx eslint --fix"
   },
   "repository": {
