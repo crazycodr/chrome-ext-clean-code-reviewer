@@ -46,6 +46,15 @@ import { ssr1, ssr2 } from './solid/single-responsibility'
 import { soc1, soc2 } from './solid/open-close'
 import { filter, first } from 'lodash'
 import { CodeSmellNotFoundError } from './codeSmellNotFoundError'
+import { sls1, sls2 } from './solid/liskov'
+import { sis1, sis2 } from './solid/interface-segregation'
+import { sdi1, sdi2 } from './solid/dependecy-inversion'
+import { sd1, sd2 } from './stupid/duplication'
+import { ss1, ss2 } from './stupid/singleton'
+import { stc1 } from './stupid/tight-coupling'
+import { su1, su2 } from './stupid/untestable'
+import { spo1 } from './stupid/premature-optimization'
+import { sin1, sin2 } from './stupid/indescriptive-naming'
 
 export function getCodeSmells (): CodeSmellStructure[] {
   return codeSmells
@@ -70,5 +79,14 @@ const codeSmells = [
   n1, n2, n3, n4, n5, n6, n7,
   t1, t2, t3, t4, t5, t6, t7, t8, t9,
   ssr1, ssr2,
-  soc1, soc2
+  soc1, soc2,
+  sls1, sls2,
+  sis1, sis2,
+  sdi1, sdi2,
+  ss1, ss2,
+  stc1,
+  su1, su2,
+  spo1,
+  sin1, sin2,
+  sd1, sd2
 ]

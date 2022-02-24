@@ -3,7 +3,7 @@ import { CodeSmellStructure } from '../../models/codeSmellStructure'
 const soc1 = new CodeSmellStructure(
   'SOC1',
   'SOLID/Open Closed',
-  'Hardcoded non-extensible logic',
+  'Non-extensible logic',
   'Code components should be open for extension and closed to modification. The code at hand features hardcoded logic that could need extension later but because it the logic is hardcoded into the component, it cannot be easily extended. Consider using a collection of items that you can supplement with such as handlers, resolvers or anything similar to promote extensibility of algorithm without having to extend the class itself and call parent code.',
   '',
   0
