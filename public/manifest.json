@@ -1,6 +1,6 @@
 {
   "name": "Code commenter",
-  "version": "1.0",
+  "version": "1.0.1",
   "manifest_version": 3,
   "description": "Adds a context menu to paste repetitive code review comments. Comes with default sets of comments such as SOLID and Clean Code.",
   "permissions": [
