@@ -1,4 +1,8 @@
 import { buildCodeSmellText } from './renderers/buildCodeSmellText'
+import DomWatcher from './eventHandlers/detectChangedDomNodes'
+
+// eslint-disable-next-line no-unused-vars
+const domWatcher = new DomWatcher()
 
 chrome.runtime.onMessage.addListener(function (msg) {
   if (msg.action === 'inject-clean-code-smell') {
